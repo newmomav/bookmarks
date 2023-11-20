@@ -12,7 +12,7 @@ export const getAllBookmarks = async (req, res) => {
     let query = {};
 
     if (title) {
-      query.title = { $regex: title, $options: "i" };
+      query.title = { $regex: title, $options: "i" }; // operator, pattern mathcing string in queries
     }
     if (url) {
       query.url = { $regex: url, $options: "i" };

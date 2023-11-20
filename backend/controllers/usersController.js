@@ -29,9 +29,10 @@ export const getUser = async (req, res) => {
     const id = req.params.id;
 
     // Does the user exists?
-    const user = await User.findById(id).lean().exec();
+    const user = await User.findById(id).lean().exec(); //plain jsobject, //returns a promise
 
     if (!user) {
+      //array of documents
       return res.status(404).json({ message: "User not found" });
     }
 
